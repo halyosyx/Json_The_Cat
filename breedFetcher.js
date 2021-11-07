@@ -1,6 +1,4 @@
 const request = require('request');
-const args = process.argv;
-const argsbreed = args.splice(2);
 
 const breedDescription = (breed, cb) => {
 
@@ -19,11 +17,4 @@ const breedDescription = (breed, cb) => {
   });
 };
 
-breedDescription(argsbreed, (error, breed) => {
-  if (error) {
-    return console.log('Error:', error);
-  } else {
-    return console.log(breed);
-  }
-});
-
+module.exports = { breedDescription };
